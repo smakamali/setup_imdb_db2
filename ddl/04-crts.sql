@@ -1,0 +1,27 @@
+connect to imdb;
+
+set current schema imdb;
+
+CREATE TEMPORARY TABLESPACE temp16k PAGESIZE 16K
+BUFFERPOOL BP_16K;
+
+CREATE USER TEMPORARY TABLESPACE usertemp16k PAGESIZE 16K
+BUFFERPOOL BP_16K;
+
+CREATE TABLESPACE ts_pd_data_001 PAGESIZE 16K 
+BUFFERPOOL BP_16K;
+
+CREATE TABLESPACE ts_pd_indx_001 PAGESIZE 16K 
+BUFFERPOOL BP_16K;
+
+CREATE TABLESPACE ts_sd_small_001 PAGESIZE 16K 
+BUFFERPOOL BP_16K;
+
+commit work;
+
+connect to imdb;
+drop tablespace tempspace1;
+
+commit work;
+
+connect reset;
