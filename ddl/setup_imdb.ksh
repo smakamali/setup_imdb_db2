@@ -1,5 +1,7 @@
 #!/bin/ksh
 
+# . 00-download.sh
+# sleep 180
 db2 -tvf 01-crdb.sql -z 01-crdb.log
 sleep 60
 db2 -tvf 02-crbp.sql -z 02-crbp.log
